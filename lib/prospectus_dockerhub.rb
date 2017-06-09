@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 module ProspectusDockerhub
-  GOOD_STATUSES = %w[success].freeze
+  GOOD_STATUSES = %w[queued building success].freeze
   # rubocop:disable Metrics/LineLength
   STATUS_XPATH = '//span[contains(@class, "BuildStatus__statusWrapper__")]'.freeze
   # rubocop:enable Metrics/LineLength
