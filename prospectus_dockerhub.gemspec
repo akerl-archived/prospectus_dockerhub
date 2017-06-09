@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'prospectus_dockerhub'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = Time.now.strftime('%Y-%m-%d')
 
   s.summary     = 'Prospectus helpers for docker hub'
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split
   s.test_files  = `git ls-files spec/*`.split
 
-  s.add_dependency 'prospectus', '~> 0.2.0'
+  s.add_dependency 'prospectus', '~> 0.3.0'
   s.add_dependency 'nokogiri', '~> 1.8.0'
 
   s.add_development_dependency 'rubocop', '~> 0.49.0'

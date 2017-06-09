@@ -19,7 +19,7 @@ module ProspectusDockerhub
 
       other.deps do
         item do
-          name 'build'
+          name 'dockerhub'
 
           expected do
             static
