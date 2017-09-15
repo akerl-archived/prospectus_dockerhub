@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'prospectus', '~> 0.5.0'
   s.add_dependency 'nokogiri', '~> 1.8.0'
 
-  s.add_development_dependency 'rubocop', '~> 0.49.0'
+  s.add_development_dependency 'rubocop', '~> 0.50.0'
   s.add_development_dependency 'rake', '~> 12.1.0'
   s.add_development_dependency 'codecov', '~> 0.1.1'
   s.add_development_dependency 'rspec', '~> 3.6.0'
