@@ -46,7 +46,7 @@ module ProspectusDockerhub
     end
 
     def html
-      @html ||= Nokogiri::HTML(open(url))
+      @html ||= Nokogiri::HTML(open(url)) # rubocop:disable Security/Open
     end
 
     def url
