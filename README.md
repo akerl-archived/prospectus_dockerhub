@@ -2,7 +2,6 @@ prospectus_dockerhub
 =========
 
 [![Gem Version](https://img.shields.io/gem/v/prospectus_dockerhub.svg)](https://rubygems.org/gems/prospectus_dockerhub)
-[![Dependency Status](https://img.shields.io/gemnasium/akerl/prospectus_dockerhub.svg)](https://gemnasium.com/akerl/prospectus_dockerhub)
 [![Build Status](https://img.shields.io/circleci/project/akerl/prospectus_dockerhub.svg)](https://circleci.com/gh/akerl/prospectus_dockerhub)
 [![Coverage Status](https://img.shields.io/codecov/c/github/akerl/prospectus_dockerhub.svg)](https://codecov.io/github/akerl/prospectus_dockerhub)
 [![Code Quality](https://img.shields.io/codacy/1ca88a296d274ee69deb247d67ac06f9.svg)](https://www.codacy.com/app/akerl/prospectus_dockerhub)
