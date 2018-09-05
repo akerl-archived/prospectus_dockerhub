@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'Prospectus helpers for docker hub'
   s.authors     = ['Les Aker']
   s.email       = 'me@lesaker.org'
-  s.homepage    = 'https://github.com/amylum/prospectus_dockerhub'
+  s.homepage    = 'https://github.com/akerl/prospectus_dockerhub'
   s.license     = 'MIT'
 
   s.files       = `git ls-files`.split
