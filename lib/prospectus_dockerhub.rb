@@ -2,8 +2,25 @@ require 'nokogiri'
 require 'open-uri'
 
 module ProspectusDockerhub
-  GOOD_STATUSES = %w[queued building success].freeze
+  STATUS_MAP = {
+    -4 => 'canceled',
+    -2 => 'exception',
+    -1 => 'error',
+    0 => 'pending',
+    1 => 'claimed',
+    2 => 'started',
+    3 => 'cloned',
+    4 => 'readme',
+    5 => 'dockerfile',
+    6 => 'built',
+    7 => 'bundled',
+    8 => 'uploaded',
+    9 => 'pushed',
+    10 => 'done',
+    11 => 'queued'
+  }.freeze
   # rubocop:disable Metrics/LineLength
+  GOOD_STATUSES = %w[started cloned readme dockerfile built bundled uploaded pushed queued claimed pending].freeze
   STATUS_XPATH = '//span[contains(@class, "BuildStatus__statusWrapper__")]'.freeze
   # rubocop:enable Metrics/LineLength
 
@@ -38,23 +55,27 @@ module ProspectusDockerhub
 
     def parse_status
       return [status, status] if GOOD_STATUSES.include?(status)
-      [status, 'success']
+      [status, 'done']
     end
 
     def status
-      @status ||= html.xpath(STATUS_XPATH).first.text.strip.downcase
+      @status ||= STATUS_MAP[status_code]
     end
 
-    def html
-      @html ||= Nokogiri::HTML(open(url)) # rubocop:disable Security/Open
+    def status_code
+      @status_code ||= json['results'].first['status']
+    end
+
+    def json
+      @json ||= JSON.parse(open(url).read) # rubocop:disable Security/Open
     end
 
     def url
-      "#{base_url}/#{@repo_slug}/builds"
+      "#{base_url}/#{@repo_slug}/buildhistory/?page_size=1&page=1"
     end
 
     def base_url
-      'https://hub.docker.com/r'
+      'https://hub.docker.com/v2/repositories'
     end
   end
 end
